@@ -2,6 +2,7 @@ package com.nexstacks.retrofit;
 
 import java.util.HashMap;
 
+import model.Result;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -14,10 +15,17 @@ public interface ApiInterface {
      * 2. Post
      * 3. Put
      * 4. Delete
-     *
      */
 
+//    @GET("everything/")
+//    Call<String> getAllNews(@QueryMap HashMap<String, Object> queries);
+
+//    @GET("top-headlines/")
+//    Call<String> getAllSources(@QueryMap HashMap<String, Object> queries);
+    @GET("top-headlines/")
+    Call<Result> getAllSource(@QueryMap HashMap<String, Object> queries);
+
     @GET("everything/")
-    Call<String> getAllNews(@QueryMap HashMap<String, Object> queries);
+    Call<Result> getAllNews(@QueryMap HashMap<String, Object> queries);
 
 }
